@@ -40,7 +40,9 @@ inline.addEventListener('click', clickCounterHandler2)
 
 const handleDelegation = (event) => {
   const resultSpan = document.querySelector('#delegation-result');
-  resultSpan.textContent = event.target.textContent;
+  if (event.target.matches('button')) {
+    resultSpan.textContent = event.target.textContent;
+  }
 };
 
 const addNewRandomNumber = () => {
