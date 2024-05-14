@@ -48,6 +48,12 @@ const handleDelegation = (event) => {
 const addNewRandomNumber = () => {
 };
 
+const delegationContainer = document.querySelector('#delegation');
+const removeListener = document.querySelector('#remove')
+removeListener.addEventListener('click', () => {
+  delegationContainer.removeEventListener('click', handleDelegation)
+});
+
 const main = () => {
   const delegationContainer = document.querySelector('#delegation');
 
