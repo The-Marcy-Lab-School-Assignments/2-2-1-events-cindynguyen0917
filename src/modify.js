@@ -14,8 +14,14 @@ const clickCounterHandler = (event) => {
 
 button.addEventListener('click', clickCounterHandler)
 
-const handleKeydown = () => {
+const para = document.querySelector('#keydown-tracker')
+
+const handleKeydown = (event) => {
+  console.log(event)
+  para.textContent = `You pressed ${event.code}`
 };
+document.body.addEventListener('keydown', handleKeydown)
+
 
 const handleDelegation = (event) => {
   const resultSpan = document.querySelector('#delegation-result');
