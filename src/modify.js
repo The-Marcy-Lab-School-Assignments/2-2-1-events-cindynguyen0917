@@ -1,5 +1,18 @@
-const clickCounterHandler = () => {
+const button = document.querySelector('#click-button')
+
+const clickCounterHandler = (event) => {
+  let clicks = Number(button.getAttribute("data-clicks"))
+  clicks += 1;
+  button.setAttribute('data-clicks', clicks)
+  console.log(clicks)
+  if (clicks === 1) {
+    button.textContent = `I've been clicked ${clicks} time.`
+  } else {
+    button.textContent = `I've been clicked ${clicks} times!`
+  }
 };
+
+button.addEventListener('click', clickCounterHandler)
 
 const handleKeydown = () => {
 };
