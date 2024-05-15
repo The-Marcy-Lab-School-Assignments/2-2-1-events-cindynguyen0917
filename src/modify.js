@@ -44,9 +44,17 @@ const handleDelegation = (event) => {
     resultSpan.textContent = event.target.textContent;
   }
 };
-
-const addNewRandomNumber = () => {
+const addButton = document.querySelector('#add-random-num')
+const ul = document.querySelector('#random-numbers')
+const addNewRandomNumber = (event) => {
+  let randomNum = Math.random()
+  const li = document.createElement('li');
+  li.textContent = randomNum
+  ul.append(li)
 };
+
+addButton.addEventListener('click', addNewRandomNumber)
+
 
 const delegationContainer = document.querySelector('#delegation');
 const removeListener = document.querySelector('#remove')
